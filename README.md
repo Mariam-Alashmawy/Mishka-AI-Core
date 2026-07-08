@@ -1,9 +1,15 @@
 # Mishka: An AI-Driven Study Companion for Enhancing Student Focus and Learning Efficiency
-## Mishka AI Core: Dual-Layered Study Companion & Behavioral Monitor
+# Mishka AI: Core Intelligence Engine
 
-Mishka AI is an asynchronous educational application that blends a high-performance **Modular AI Synthesis Engine** (Gemini 2.5 Flash) with a **Real-Time Asynchronous Vision Monitor** (MediaPipe Pose & Face) to seamlessly track student engagement with zero UI latency.
+Welcome to the core intelligence repository of **Mishka**. Mishka is a comprehensive graduation project designed to guide modern students, defeat distraction, and transform dense academic materials into gamified cosmic wisdom. 
+
+This specific repository showcases the **AI Core** of Mishka—the dual-layered intelligent backend architecture for which I was solely responsible. 
 
 ---
+
+## Architecture Overview
+
+The AI Core of Mishka is split into two specialized sub-systems that handle cognitive processing and behavioral analytics concurrently:
 
 ## System Architecture
 
@@ -12,17 +18,19 @@ Mishka AI is an asynchronous educational application that blends a high-performa
 
 ---
 
-## ✨ Core Features
+## Core Features
 
-### 1. Asynchronous Behavioral Analytics (Study Monitor)
+### 1. Cognitive Synthesis Core (Study Companion)
+* **Structured Generation:** Forces JSON parsing on LLM responses to generate clean, interactive Quizzes, Flashcards, and Mind Maps.
+* **Persistent Session Tracker:** Uses a custom `Memory Manager` to preserve conversational arrays for ongoing chat queries.
+
+### 2. Asynchronous Behavioral Analytics (Study Monitor)
 * **Attention Offset ($AO$):** Tracks gaze deviation by measuring the distance of the nose tip relative to the horizontal face bounding box:
   $$AO = \frac{|x_{nose} - x_{center}|}{w_{bbox}}$$
 * **Posture Index ($PI$):** Monitors upper-body slouching via MediaPipe Pose (Complexity 0) by averaging shoulder vertical positions:
   $$PI = \frac{y_{left\_shoulder} + y_{right\_shoulder}}{2}$$
 * **Zero-Freeze Concurrency:** Decouples matrix operations from the UI stream using a bounded FIFO `queue.Queue` pipeline.
 
-### 2. Cognitive Synthesis Core (Study Companion)
-* **Structured Generation:** Forces JSON parsing on LLM responses to generate clean, interactive Quizzes, Flashcards, and Mind Maps.
-* **Persistent Session Tracker:** Uses a custom `Memory Manager` to preserve conversational arrays for ongoing chat queries.
+
 
 ---
