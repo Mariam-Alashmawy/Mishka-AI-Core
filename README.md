@@ -89,7 +89,6 @@ pip install -r requirements.txt
 3. Create a `.env` file in this folder and insert your key configuration:
 ```text
 OPENROUTER_API_KEY=your_openrouter_api_key_here
-
 ```
 
 
@@ -130,7 +129,7 @@ pip install -r requirements.txt
 ```
 
 
-*(Note: Ensure your installation includes `mediapipe==0.10.21` and `opencv-python==4.8.0.74` for stability).*
+*(Note: This locks your setup to mediapipe==0.10.21 and opencv-python==4.8.0.74 for core stability).*
 3. Launch the FastAPI telemetry data receiver endpoints:
 ```cmd
 uvicorn main:app --reload --port 8001
