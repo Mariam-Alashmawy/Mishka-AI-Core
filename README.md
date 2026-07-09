@@ -56,3 +56,99 @@ Mishka Study Monitor/
 └── requirements.txt    # Vision framework dependency tracker
 ```
 ---
+
+```markdown
+## 🚀 How to Run the Project
+
+To run the full Mishka ecosystem locally, you will need to open **two separate terminal windows** (one for each application layer) and ensure your Python environment is active in both.
+
+### 📋 Prerequisites & Initial Environment Setup
+First, open your primary terminal, clone the repository, and set up your virtual environment:
+```cmd
+git clone [https://github.com/your-username/mishka-ai-core.git](https://github.com/your-username/mishka-ai-core.git)
+cd mishka-ai-core
+python -m venv .venv
+.venv\Scripts\activate
+
+```
+
+---
+
+### Running Part 1: The Mishka Study Companion
+
+1. Navigate to the companion directory:
+```cmd
+cd "Mishka Study Companion"
+
+```
+
+
+2. Install the necessary processing and AI dependencies:
+```cmd
+pip install -r requirements.txt
+
+```
+
+
+3. Create a `.env` file in this folder and insert your key configuration:
+```text
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+
+```
+
+
+4. Start the FastAPI endpoints backend server:
+```cmd
+uvicorn app:app --reload --port 8000
+
+```
+
+
+5. In a new terminal tab (with your environment active), run the Streamlit user interface dashboard:
+```cmd
+streamlit run streamlit_app.py
+
+```
+
+
+*The companion dashboard will open automatically in your browser at `http://localhost:8501`.*
+
+---
+
+### 🧘 Running Part 2: The Mishka Study Monitor
+
+1. Open a new terminal window, navigate to the monitor directory, and activate your environment:
+```cmd
+.venv\Scripts\activate
+cd "Mishka Study Monitor"
+
+```
+
+
+2. Install the specific computer vision requirements:
+```cmd
+pip install -r requirements.txt
+
+```
+
+
+*(Note: Ensure your installation includes `mediapipe==0.10.21` and `opencv-python==4.8.0.74` for stability).*
+3. Launch the FastAPI telemetry data receiver endpoints:
+```cmd
+uvicorn main:app --reload --port 8001
+
+```
+
+
+4. Run the main Streamlit application web interface to open your webcam:
+```cmd
+streamlit run app.py
+
+```
+
+
+*The vision companion dashboard will open automatically at `http://localhost:8502`.*
+
+```
+
+```
