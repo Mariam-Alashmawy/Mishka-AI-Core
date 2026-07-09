@@ -129,7 +129,6 @@ pip install -r requirements.txt
 ```
 
 
-*(Note: This locks your setup to mediapipe==0.10.21 and opencv-python==4.8.0.74 for core stability).*
 3. Launch the FastAPI telemetry data receiver endpoints:
 ```cmd
 uvicorn main:app --reload --port 8001
