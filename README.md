@@ -61,21 +61,20 @@ Mishka Study Monitor/
 
 To run the full Mishka ecosystem locally, you will need to open **two separate terminal windows** (one for each application layer) and ensure your Python environment is active in both.
 
-### Prerequisites & Initial Environment Setup
-First, open your primary terminal, clone the repository, and set up your virtual environment:
+First, open your primary terminal, and clone the repository:
 ```cmd
 git clone https://github.com/Mariam-Alashmawy/Mishka-AI-Core.git
-cd Mishka-AI-Core
-python -m venv .venv
-.venv\Scripts\activate
+
 ```
 ---
 
 ### Running Part 1: The Mishka Study Companion
 
-1. Navigate to the companion directory:
+1. Open your first terminal window, enter the companion directory, and initialize its environment:
 ```cmd
 cd "Mishka Study Companion"
+python -m venv .venv
+.venv\Scripts\activate
 
 ```
 
@@ -114,10 +113,12 @@ streamlit run streamlit_app.py
 
 ### Running Part 2: The Mishka Study Monitor
 
-1. Open a new terminal window, navigate to the monitor directory, and activate your environment:
+1. Open a new terminal window, navigate to the monitor directory, and create your environment then activate it:
 ```cmd
 .venv\Scripts\activate
 cd "Mishka Study Monitor"
+python -m venv .venv
+.venv\Scripts\activate
 
 ```
 
